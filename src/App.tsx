@@ -6,13 +6,13 @@ import { FoodData } from './interface/FoodData';
 
 
 function App() {
-  const data: FoodData[] = [];
+  const { data } = useFoodData();
 
   return (
     <div className="container">
       <h1>Cardápio</h1>
       <div className="card-grid">
-        {data.map(foodData => <Card 
+        {data?.map(foodData => <Card 
         price={foodData.price} 
         title={foodData.title} 
         image={foodData.image}
